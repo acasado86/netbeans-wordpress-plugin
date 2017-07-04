@@ -49,6 +49,11 @@ public class WordPressDummyModuleImpl extends WordPressModuleImpl {
     public FileObject getPluginsDirectory() {
         return null;
     }
+    
+    @Override
+    public FileObject getMUPluginsDirectory() {
+        return null;
+    }
 
     @Override
     public FileObject getThemesDirectory() {

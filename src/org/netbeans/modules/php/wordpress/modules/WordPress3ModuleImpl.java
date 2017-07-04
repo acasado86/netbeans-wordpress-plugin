@@ -57,6 +57,7 @@ import org.openide.filesystems.FileObject;
 public class WordPress3ModuleImpl extends WordPressModuleImpl {
 
     private FileObject pluginsDirectory;
+    private FileObject mupluginsDirectory;
     private FileObject themesDirectory;
     private FileObject includesDirectory;
     private FileObject adminDirectory;
@@ -73,6 +74,11 @@ public class WordPress3ModuleImpl extends WordPressModuleImpl {
     @Override
     public FileObject getPluginsDirectory() {
         return pluginsDirectory;
+    }
+    
+    @Override
+    public FileObject getMUPluginsDirectory() {
+        return mupluginsDirectory;
     }
 
     @Override
@@ -131,6 +137,9 @@ public class WordPress3ModuleImpl extends WordPressModuleImpl {
             case INCLUDES:
                 targetDirectory = getIncludesDirectory();
                 break;
+            case MUPLUGINS:
+                targetDirectory = getMUPluginsDirectory();
+                break;
             case PLUGINS:
                 targetDirectory = getPluginsDirectory();
                 break;
@@ -183,7 +192,7 @@ public class WordPress3ModuleImpl extends WordPressModuleImpl {
     }
 
     private void constructMUPluginsDirectory(FileObject sourceDirectory, String contentName) {
-        pluginsDirectory = wordPressRootDirectory.getFileObject(String.format(WP_MUPLUGINS, contentName));
+        mupluginsDirectory = wordPressRootDirectory.getFileObject(String.format(WP_MUPLUGINS, contentName));
     }
 
     private void constructPluginsDirectory(FileObject sourceDirectory, String contentName) {

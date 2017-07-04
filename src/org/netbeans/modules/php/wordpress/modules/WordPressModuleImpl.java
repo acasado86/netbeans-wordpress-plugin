@@ -51,6 +51,8 @@ import org.openide.filesystems.FileObject;
 public abstract class WordPressModuleImpl {
 
     public abstract FileObject getPluginsDirectory();
+    
+    public abstract FileObject getMUPluginsDirectory();
 
     public abstract FileObject getThemesDirectory();
 

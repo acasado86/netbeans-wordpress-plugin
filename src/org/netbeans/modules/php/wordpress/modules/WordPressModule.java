@@ -61,6 +61,7 @@ public final class WordPressModule {
         CONTENT,
         ROOT,
         INCLUDES,
+        MUPLUGINS,
         PLUGINS,
         THEMES;
     }
@@ -76,6 +77,11 @@ public final class WordPressModule {
     public FileObject getPluginsDirectory() {
         return impl.getPluginsDirectory();
     }
+    
+    public FileObject getMUPluginsDirectory() {
+        return impl.getMUPluginsDirectory();
+    }
+
 
     public FileObject getThemesDirectory() {
         return impl.getThemesDirectory();

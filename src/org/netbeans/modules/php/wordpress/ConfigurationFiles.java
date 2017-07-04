@@ -68,9 +68,11 @@ public final class ConfigurationFiles extends FileChangeAdapter implements Impor
     // @GuardedBy("this")
     private boolean isInitialized = false;
     private static final String WP_CONFIG_PHP = "wp-config.php"; // NOI18N
+    private static final String WP_CONFIG_PHP_LOCAL = "wp-config-local.php"; // NOI18N
     private static final String HTACCESS = ".htaccess"; // NOI18N
     private static final String[] CONFIG_FILES = {
         WP_CONFIG_PHP,
+        WP_CONFIG_PHP_LOCAL,
         HTACCESS
     };
 

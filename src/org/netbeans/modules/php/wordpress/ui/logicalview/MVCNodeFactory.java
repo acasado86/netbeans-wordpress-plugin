@@ -97,6 +97,11 @@ public class MVCNodeFactory implements NodeFactory {
                 if (pluginsDirectory != null) {
                     addNode(list, pluginsDirectory);
                 }
+                // muplugins
+                FileObject mupluginsDirectory = module.getMUPluginsDirectory();
+                if (mupluginsDirectory != null) {
+                    addNode(list, mupluginsDirectory);
+                }
                 // themes
                 FileObject themesDirectory = module.getThemesDirectory();
                 if (themesDirectory != null) {
