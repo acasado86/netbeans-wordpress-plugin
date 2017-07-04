@@ -50,6 +50,7 @@ import org.netbeans.modules.php.wordpress.preferences.WordPressPreferences;
 import static org.netbeans.modules.php.wordpress.util.WPFileUtils.WP_ADMIN;
 import static org.netbeans.modules.php.wordpress.util.WPFileUtils.WP_INCLUDES;
 import static org.netbeans.modules.php.wordpress.util.WPFileUtils.WP_PLUGINS;
+import static org.netbeans.modules.php.wordpress.util.WPFileUtils.WP_MUPLUGINS;
 import static org.netbeans.modules.php.wordpress.util.WPFileUtils.WP_THEMES;
 import org.openide.filesystems.FileObject;
 
@@ -176,8 +177,13 @@ public class WordPress3ModuleImpl extends WordPressModuleImpl {
         includesDirectory = wordPressRootDirectory.getFileObject(WP_INCLUDES);
         adminDirectory = wordPressRootDirectory.getFileObject(WP_ADMIN);
 
+        constructMUPluginsDirectory(sourceDirectory, contentName);
         constructPluginsDirectory(sourceDirectory, contentName);
         constructThemesDirectory(sourceDirectory, contentName);
+    }
+
+    private void constructMUPluginsDirectory(FileObject sourceDirectory, String contentName) {
+        pluginsDirectory = wordPressRootDirectory.getFileObject(String.format(WP_MUPLUGINS, contentName));
     }
 
     private void constructPluginsDirectory(FileObject sourceDirectory, String contentName) {

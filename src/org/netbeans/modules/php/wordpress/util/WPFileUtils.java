@@ -64,6 +64,7 @@ public class WPFileUtils {
 
     public static final String WP_CONTENT = "wp-content"; // NOI18N
     public static final String WP_PLUGINS = "%s/plugins"; // NOI18N
+    public static final String WP_MUPLUGINS = "%s/mu-plugins"; // NOI18N
     public static final String WP_THEMES = "%s/themes"; // NOI18N
     public static final String WP_INCLUDES = "wp-includes"; // NOI18N
     public static final String WP_ADMIN = "wp-admin"; // NOI18N
